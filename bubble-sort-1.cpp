@@ -1,0 +1,40 @@
+#include <iostream>
+
+
+void funcprint(int array[], int length);
+
+
+int main() {
+
+	int array[10] = { 9 ,5 ,2 ,1 ,0 ,7 ,6 ,8 ,3 ,4 };
+
+
+	for (int i = 0; i < 10 - 1; i++) {
+		for (int j = 0; j < 10 - 1; j++) {
+			if (array[j] > array[j + 1]) {
+				int temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+		}
+	}
+
+	funcprint(array, 10);
+	
+}
+
+void funcprint(int array[], int length) {
+
+
+	std::cout << "[";
+	for (int i = 0; i < length; i++) {
+
+		std::cout << array[i];
+		if (i < length - 1) {
+			std::cout << ", ";
+		}
+	}
+	std::cout << "]";
+
+}
+	
